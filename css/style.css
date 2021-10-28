@@ -70,8 +70,17 @@ body{
     align-items: center;
   }
 
-  .pricing{
+  .card > header {
+      background: #288088;
+      border: 2px solid #45ADAD;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+  }
 
+  .pricing{
+    
   }
 
   .card {
