@@ -2,11 +2,20 @@ body{
     margin: 0;
     padding: 0;
     font-size: 16pt; /* test for this! Make all sizes em or rem */
-  }
+    font-family: 'Alegreya Sans SC', serif;
+    background-color: #f1f1f1;
+    background-image: url('file:///Users/sulaymanahmed/Documents/GitHub/homework6-2021/images/concrete_seamless.png');
+}
   
   header{
     background: #fff;
     border-bottom: 3px solid #50C7C7;
+    display: flex;
+    justify-content: center;
+  }
+
+  a:visited{
+    color: #0000EE;
   }
   
   h1{
@@ -25,7 +34,7 @@ body{
     padding: 0 30px;
   }
   
-  a.skip{
+  /* a.skip{
     background: white;
     left: 0;
     padding: 6px;
@@ -40,6 +49,24 @@ body{
     top:20px;
     color: black;
     text-decoration-style: solid;
+  } */
+
+  .skip a{
+    background: #ffffff;
+    left: 0;
+    padding: 6px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+  
+    /* Requirement 3a code here*/
+    position: absolute;
+    top: -40px;
+  }
+  
+  /* Requirement 3b code here*/
+  .skip a:focus{
+    top: 0px;
   }
   
   *:focus{
