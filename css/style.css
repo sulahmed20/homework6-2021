@@ -1,7 +1,7 @@
 body{
     font-family: 'Alegreya Sans SC', serif;
     background-color: #f1f1f1;
-    background-image: url('file:///Users/sulaymanahmed/Documents/GitHub/homework6-2021/images/concrete_seamless.png');
+    background-image: url('../images/concrete_seamless.png');
 }
   
   header{
@@ -13,35 +13,22 @@ body{
   a:visited{
     color: #0000EE;
   }
-  
-  h1{
 
-  }
-  
-  h2{
+  #logo { 
+    animation-name: animateLogoIn;
+    animation-duration: 4s;
+  } 
 
+  @keyframes animateLogoIn {
+    from {
+        width: 50px;
+        opacity: 0;
+    }
+    to {
+        width: 425px; 
+        opacity: 1;
+    }
   }
-  
-  p {
-
-  }
-  
-  /* a.skip{
-    background: white;
-    left: 0;
-    padding: 6px;
-    position: absolute;
-    top: -40px;
-    -webkit-transition: top 1s ease-out;
-    transition: top 1s ease-out;
-    z-index: 1;
-  }
-  
-  a.skip:focus{
-    top:20px;
-    color: black;
-    text-decoration-style: solid;
-  } */
 
   .skip a{
     background: #ffffff;
@@ -58,11 +45,6 @@ body{
     top: 0px;
   }
   
-  *:focus{
-
-  }
-
-
   .nav_links{
     padding: 0px;
     display: flex;
@@ -80,46 +62,93 @@ body{
   }
 
   .pricing{
-    
+    display: flex;
+    justify-content: center;
+    align-items:center; 
+    flex-wrap: wrap;
   }
 
   .card {
-
+    display: flex;
+    flex-basis: 450px;
+    flex-direction: column;
   }
 
-  .card > ul{
-
-  }
-  
-  .card > ul li {
-
-  }
-
-.card button{
-
-  }
-  
-  .card h3{
-
-  }
-  
-  .card_big{
-
+  .gallery > img{
+    display: flex;
+    border: 10px solid #50C7C7;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 300px;
   }
 
   .gallery{
-
-  }
-  
-  footer{
-
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
   }
 
   @media screen and (min-width: 850px){
-    .card_big{
-        -webkit-transform: scaleY(1.1);
-        transform: scaleY(1.1);
-        z-index: -99;
-  }
+      body > header{
+          justify-content: space-between;
+          flex-direction: row;
+          position: sticky;
+          top: 0;
+          z-index: 1;
+      }
+      .nav_links{
+          flex-direction: row;
+      }
+      .card{
+          flex-basis: 250px;
+      }
+}
+
+@media (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none;
+    }
+}
+
+@media print {
+    body {
+        background-image: initial;
+        /* Fix weird color print issue */
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        flex: 1;
+        justify-content: space-evenly;
+        align-items: stretch;
+    }
+
+    .pricing {
+        align-items: flex-end;
+        flex-wrap: nowrap;
+    }
+
+    .card {
+        border: solid 2px #45addd;
+        flex-basis: 250px;
+    }
+
+    .card > ul > li:nth-child(odd)::before,
+    .card > ul > li:nth-child(even)::after {
+        content: "\01F44D";
+    }
+
+    #gallery,
+    .gallery {
+        display: none;
+    }
 }
   
